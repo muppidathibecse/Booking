@@ -1,0 +1,47 @@
+<main class="min-h-screen w-full flex">
+  <!-- Left Sidebar -->
+  <div
+    class="w-[30%] bg-[#0a0157] h-screen shadow-sm shadow-black flex flex-col justify-between fixed"
+  >
+    <!-- Sidebar Top -->
+    <div>
+      <div class="flex items-center justify-start gap-6 py-2 px-3 mb-2">
+        <p class="text-white text-[35px] font-bold">ABC Booking</p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <div
+          class="flex justify-start items-center h-[50px] text-gray-500 text-[20px] px-4 py-1 cursor-pointer"
+          routerLinkActive="text-white border-l-4 border-l-white rounded-r-[20px] bg-[#0a0157]"
+        >
+          <a routerLink="/tickets">Home</a>
+        </div>
+        <div
+          class="flex justify-start items-center h-[50px] text-gray-500 text-[20px] px-4 py-1 cursor-pointer"
+          routerLinkActive="text-white border-l-4 border-l-white rounded-r-[20px] bg-[#0a0157]"
+        >
+          <a routerLink="/bookings">My Bookings</a>
+        </div>
+        <div
+          class="flex justify-start items-center h-[50px] text-gray-500 text-[20px] px-4 py-1 cursor-pointer"
+          routerLinkActive="text-white border-l-4 border-l-white rounded-r-[20px]"
+        >
+          <a routerLink="/account">Account</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Bottom -->
+    <button
+      (click)="Logout()"
+      class="text-white px-3 py-2 text-[20px] rounded-[10px] mb-3 ml-3 cursor-pointer"
+    >
+      <i class="fa-solid fa-arrow-right-from-bracket mr-2"></i>
+    </button>
+  </div>
+
+  <!-- Right Content -->
+  <div class="ml-[30%] flex-1 h-screen overflow-y-auto">
+    <router-outlet></router-outlet>
+    <!-- More content here will scroll -->
+  </div>
+</main>

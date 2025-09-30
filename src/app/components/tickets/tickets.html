@@ -1,0 +1,45 @@
+<main>
+  <div class="flex flex-col justify-center items-center py-3">
+    <h1 class="text-[#0a0157] font-bold text-[30px]">Bus Tickets</h1>
+    <hr class="border-t-4 border-[#0a0157] w-[100px] rounded-full mb-5" />
+    <div class="flex flex-col w-[500px] border-gray-400 rounded-2xl shadow-lg shadow-[#c7c7c7]">
+      <div class="group px-4 py-3 w-[100%] border-b-1 border-b-gray-300">
+        <i
+          class="text-gray-400 group-focus-within:text-[#0a0157] text-[20px] mr-[10px] fa-solid fa-bus"
+        ></i>
+        <input
+          type="text"
+          placeholder="From"
+          class="text-[#0a0157] text-[20px] font-semibold placeholder:text-gray-400 focus:outline-none"
+        />
+      </div>
+      <div class="group px-4 py-3 w-[100%] border-b-1 border-b-gray-300">
+        <i
+          class="text-gray-400 group-focus-within:text-[#0a0157] text-[20px] mr-[10px] fa-solid fa-bus"
+        ></i>
+        <input
+          type="text"
+          placeholder="To"
+          class="text-[#0a0157] text-[20px] font-semibold placeholder:text-gray-400 focus:outline-none"
+        />
+      </div>
+      <div class="group px-4 py-3 w-[100%]">
+        <i
+          class="text-gray-400 group-focus-within:text-[#0a0157] text-[20px] mr-[10px] fa-solid fa-calendar-days"
+        ></i>
+        <input
+          type="text"
+          placeholder="Date"
+          class="text-[#0a0157] text-[20px] font-semibold placeholder:text-gray-400 focus:outline-none"
+        />
+      </div>
+    </div>
+    <button
+      (click)="Search()"
+      class="w-[500px] bg-[#0a0157] text-white text-[20px] rounded-[10px] py-3 mt-6 cursor-pointer"
+    >
+      <i class="fa-solid fa-magnifying-glass mr-3"></i>Search buses
+    </button>
+  </div>
+  <app-diplaytickets></app-diplaytickets>
+</main>

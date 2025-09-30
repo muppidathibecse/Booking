@@ -1,0 +1,43 @@
+<button
+      (click)="Search()"
+      class="w-[500px] bg-[#0a0157] text-white text-[20px] rounded-[10px] py-3 mt-6 cursor-pointer"
+    >
+      <i class="fa-solid fa-magnifying-glass mr-3"></i>Search buses
+    </button>
+<div
+  *ngFor="let bus of currentList"
+  class="flex w-[100%] justify-center items-center flex-col gap-[50px] py-5"
+>
+  <div
+    class="flex justify-center w-[80%] py-3 cursor-pointer rounded-[10px] shadow-lg shadow-[#c7c7c7]"
+  >
+    <div class="w-[80%] ml-10">
+      <p class="text-[20px]">
+        <span class="font-bold">{{ bus.stime }}</span> - {{ bus.rtime }}
+      </p>
+      <p class="text-[14px] text-gray-500">
+        {{ bus.duration }} . <span>{{ bus.available }} seats</span>
+      </p>
+      <p class="text-[20px] font-bold">{{ bus.busname }}</p>
+      <p class="text-[14px] text-gray-500">{{ bus.type }}</p>
+    </div>
+    <div class="w-[20%]">
+      <div>
+        <p class="text-[20px] font-bold">
+          <span class="text-[15px] text-gray-500 font-normal line-through"
+            >{{ bus.oldrs | currency : 'INR' : 'symbol' : '1.0-0' }} </span
+          >{{ bus.rs | currency : 'INR' : 'symbol' : '1.0-0' }}
+        </p>
+        <p class="text-[14px] text-gray-500">Onwards</p>
+      </div>
+
+      <div
+        class="flex justify-center items-center gap-2 rounded-2xl px-2 py-0.5 text-white w-[60px] mt-2"
+        [ngClass]="bus.ratings < 4 ? 'bg-[#c67101]' : 'bg-[#007137]'"
+      >
+        <i class="fa-solid fa-star"></i>
+        <p>{{ bus.ratings }}</p>
+      </div>
+    </div>
+  </div>
+</div>

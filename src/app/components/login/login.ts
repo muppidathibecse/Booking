@@ -33,7 +33,7 @@ export class Login implements OnInit {
       alert('Login Successful!');
       // this.router.navigate(['/check', found.username]);
       this.userService.username.set(found.username); // save username
-      this.router.navigate(['/check']); // navigate to Check page
+      this.router.navigate(['/tickets']); // navigate to Check page
     } else {
       alert('User not found or wrong password!');
     }
