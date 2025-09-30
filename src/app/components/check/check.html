@@ -1,0 +1,15 @@
+<main class="min-h-screen min-w-full">
+  <div class="flex h-screen w-full">
+    <!-- Left Sidebar -->
+    <div class="w-[25%] bg-white h-full">
+      <button (click)="Logout()" class="bg-[#0a0157] text-white px-3 py-2 text-[20px]">
+        <i class="fa-solid fa-arrow-right-from-bracket mr-2"></i>Logout
+      </button>
+    </div>
+
+    <!-- Right Content -->
+    <div class="flex-1 bg-amber-900 h-full">
+      <h1 class="text-3xl font-bold text-[#0a0157]">Welcome {{ userService.username() }}</h1>
+    </div>
+  </div>
+</main>
