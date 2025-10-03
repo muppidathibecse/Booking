@@ -1,4 +1,5 @@
 export interface BusDetails {
+  id: number;
   busname: string;
   type: string;
   stime: string;
@@ -14,6 +15,7 @@ export interface BusDetails {
 
 export const BUS_DETAILS: BusDetails[] = [
   {
+    id: 1,
     busname: 'Royal Travels',
     type: 'Non A/C Sleeper / Seater',
     stime: '19:45',
@@ -27,6 +29,7 @@ export const BUS_DETAILS: BusDetails[] = [
     ratings: 4.3,
   },
   {
+    id: 2,
     busname: 'A1 Travels',
     type: 'A/C Sleeper / Seater',
     stime: '07:45',
@@ -40,8 +43,9 @@ export const BUS_DETAILS: BusDetails[] = [
     ratings: 2.3,
   },
   {
-    busname: 'A1 Travels',
-    type: 'A/C Sleeper / Seater',
+    id: 3,
+    busname: 'SRM Travels',
+    type: 'Non A/C Sleeper / Seater',
     stime: '07:45',
     rtime: '10:21',
     duration: '3hr 21min',
@@ -50,10 +54,11 @@ export const BUS_DETAILS: BusDetails[] = [
     oldrs: 1900,
     rs: 1100,
     available: 7,
-    ratings: 2.3,
+    ratings: 4.2,
   },
   {
-    busname: 'A1 Travels',
+    id: 4,
+    busname: 'SRS Travels',
     type: 'A/C Sleeper / Seater',
     stime: '08:45',
     rtime: '10:21',
@@ -66,8 +71,9 @@ export const BUS_DETAILS: BusDetails[] = [
     ratings: 2.3,
   },
   {
-    busname: 'A1 Travels',
-    type: 'A/C Sleeper / Seater',
+    id: 5,
+    busname: 'AK Travels',
+    type: 'Non A/C Sleeper / Seater',
     stime: '07:45',
     rtime: '10:21',
     duration: '3hr 21min',
@@ -76,6 +82,6 @@ export const BUS_DETAILS: BusDetails[] = [
     oldrs: 1900,
     rs: 1100,
     available: 7,
-    ratings: 2.3,
+    ratings: 4.3,
   },
 ];

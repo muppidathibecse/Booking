@@ -1,1 +1,40 @@
-<p>booking works!</p>
+<main class="bg-[#efefef] min-h-full">
+  <div class="flex flex-col justify-center items-center px-4 py-2">
+    <h1 class="text-[#0a0157] font-bold text-[30px]">My Bookings</h1>
+    <hr class="border-t-4 border-[#0a0157] w-[100px] rounded-full mb-5" />
+  </div>
+
+  <div *ngFor="let ticket of TicketsList" class="flex flex-col justify-center items-center mb-5">
+    <div class="w-[60%] mb-10 rounded-[30px] shadow-lg shadow-[#c7c7c7] flex flex-col">
+      <div
+        class="bg-[#ff2b2b] rounded-t-[30px] w-[100%] flex flex-row justify-between items-center py-5 px-[20px]"
+      >
+        <p class="font-semibold text-[23px] text-white">{{ ticket.src }}</p>
+        <hr class="border-t-1 w-[300px] border-white" />
+        <p class="font-semibold text-[23px] text-white">{{ ticket.des }}</p>
+      </div>
+      <div class="bg-[#ff2b2b] w-[100%] flex flex-row justify-between items-center px-[20px]">
+        <p class="font-semibold text-[23px] text-white">{{ ticket.start }}</p>
+        <p class="text-gray-100">
+          <i class="fa-solid fa-hourglass-start mr-2"></i>{{ ticket.duration }}
+        </p>
+        <p class="font-semibold text-[23px] text-white">{{ ticket.end }}</p>
+      </div>
+      <div class="bg-[#ff2b2b] w-[100%] flex flex-row justify-between items-center px-[20px] pb-4">
+        <p class="text-[15px] text-white">Sat, 18 Oct</p>
+        <p class="text-[15px] text-white">Sun, 19 Oct</p>
+      </div>
+      <div class="flex flex-row justify-between bg-white p-4 gap-2">
+        <p class="font-semibold text-[19px]">{{ ticket.busname }}</p>
+        <p class="text-gray-400"><i class="fa-solid fa-user-group"></i> {{ ticket.no }}</p>
+      </div>
+      <div class="bg-white flex rounded-b-[30px] flex-col justify-center items-center gap-[20px]">
+        <p class="text-[18px] bg-gray-200 w-[200px] rounded-[20px] text-center px-2 py-1">
+          <i class="fa-solid fa-location-dot"></i> Boarding Point
+        </p>
+        <hr class="border-t-[1px] text-center border-dashed w-[390px] border-gray-400" />
+        <p class="text-[#0a0157] underline font-semibold pb-2">View Ticket Details</p>
+      </div>
+    </div>
+  </div>
+</main>

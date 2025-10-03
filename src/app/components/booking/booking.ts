@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TICKET, Ticket } from '../../interfaces/ticket';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-booking',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './booking.html',
-  styleUrl: './booking.css'
+  styleUrls: ['./booking.css'],
 })
-export class Booking {
-
+export class Booking implements OnInit {
+  TicketsList: Ticket[] = [];
+  ngOnInit(): void {
+    this.TicketsList = TICKET;
+    console.log(this.TicketsList);
+  }
 }

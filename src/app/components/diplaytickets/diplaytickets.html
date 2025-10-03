@@ -1,5 +1,9 @@
-<div *ngIf="currentList.length == 0" class="flex flex-col justify-center h-[300px] items-center">
-  <p>{{ LoadingStatus }}</p>
+<div class="flex flex-row w-[100%] justify-center items-center gap-[50px] py-5">
+  <p class="text-black text-[20px] font-semibold">{{ userdata.source }}</p>
+  <hr class="border-t-2 border-dashed w-[300px] border-black" />
+  <p class="text-black text-[20px] font-semibold">{{ userdata.destination }}</p>
+</div>
+<div *ngIf="currentList.length == 0" class="flex flex-col justify-center items-center">
   <p class="font-semibold text-[2rem]">Oops!!</p>
   <p class="text-[1.5rem]">No Buses Found</p>
   <p class="text-gray-600">Please try a different route or date</p>
@@ -10,6 +14,7 @@
   class="flex w-[100%] justify-center items-center flex-col gap-[50px] py-5"
 >
   <div
+    (click)="GotoBook(bus)"
     class="flex justify-center w-[80%] py-3 cursor-pointer rounded-[10px] shadow-lg shadow-[#c7c7c7]"
   >
     <div class="w-[80%] ml-10">

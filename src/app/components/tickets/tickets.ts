@@ -27,7 +27,6 @@ export class Tickets {
 
   Search() {
     console.log(this.current);
-
     this.Show = true;
   }
   Clear() {

@@ -26,6 +26,7 @@ import { Navbar } from './components/navbar/navbar';
 import { Tickets } from './components/tickets/tickets';
 import { Booking } from './components/booking/booking';
 import { Account } from './components/account/account';
+import { Bookingform } from './components/bookingform/bookingform';
 
 export const routes: Routes = [
   // Public routes (no navbar)
@@ -37,14 +38,15 @@ export const routes: Routes = [
   // Protected routes (with navbar)
   {
     path: '',
-    component: Navbar,  // navbar only here
+    component: Navbar, // navbar only here
     children: [
       { path: 'tickets', component: Tickets },
       { path: 'bookings', component: Booking },
       { path: 'account', component: Account },
-    ]
+      { path: 'bookingform', component: Bookingform },
+    ],
   },
 
   // fallback
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
 ];

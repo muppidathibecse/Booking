@@ -2,7 +2,7 @@
   <div class="flex flex-col justify-center items-center py-3">
     <h1 class="text-[#0a0157] font-bold text-[30px]">Bus Tickets</h1>
     <hr class="border-t-4 border-[#0a0157] w-[100px] rounded-full mb-5" />
-    <div class="flex flex-col w-[500px] border-gray-400 rounded-2xl shadow-lg shadow-[#c7c7c7]">
+    <div class="flex flex-col w-[500px] border-gray-300 border-1 rounded-2xl shadow-lg shadow-[#c7c7c7]">
       <div class="group px-4 py-3 w-[100%] border-b-1 border-b-gray-300">
         <i
           class="text-gray-400 group-focus-within:text-[#0a0157] text-[20px] mr-[10px] fa-solid fa-bus"
@@ -50,5 +50,7 @@
       Clear
     </button>
   </div>
+
+
   <app-diplaytickets *ngIf="Show" [userdata]="current"></app-diplaytickets>
 </main>

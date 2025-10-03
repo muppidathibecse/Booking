@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BUS_DETAILS, BusDetails } from '../../interfaces/busdetails';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-diplaytickets',
@@ -16,7 +17,7 @@ export class Diplaytickets implements OnInit {
   };
   TotalList: BusDetails[] = [];
   currentList: BusDetails[] = [];
-  constructor() {}
+  constructor(private router: Router) {}
   ngOnInit(): void {
     this.TotalList = BUS_DETAILS;
     console.log(this.TotalList);
@@ -25,8 +26,12 @@ export class Diplaytickets implements OnInit {
   }
 
   Search() {
-    
-    this.currentList = this.TotalList.filter((ticket) => ticket.src === this.userdata.source);
+    // this.currentList = this.TotalList.filter((ticket) => ticket.src === this.userdata.source);
+    this.currentList = this.TotalList;
     console.log('Chennai TKSTS:', this.currentList);
+  }
+  GotoBook(curr: BusDetails) {
+    console.log(curr);
+    this.router.navigate(['/bookingform']);
   }
 }
