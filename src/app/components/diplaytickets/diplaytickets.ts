@@ -14,22 +14,18 @@ export class Diplaytickets implements OnInit {
     destination: string;
     date: string;
   };
-  LoadingStatus = '';
   TotalList: BusDetails[] = [];
   currentList: BusDetails[] = [];
   constructor() {}
   ngOnInit(): void {
-    this.LoadingStatus = 'Loading..';
     this.TotalList = BUS_DETAILS;
     console.log(this.TotalList);
     console.log('In Child:', this.userdata);
-    setTimeout(() => {
-      this.Search();
-      this.LoadingStatus = ''; // hide loading
-    }, 2000); // 2000ms = 2 seconds
+    this.Search();
   }
 
   Search() {
+    
     this.currentList = this.TotalList.filter((ticket) => ticket.src === this.userdata.source);
     console.log('Chennai TKSTS:', this.currentList);
   }
