@@ -1,9 +1,10 @@
-<button
-      (click)="Search()"
-      class="w-[500px] bg-[#0a0157] text-white text-[20px] rounded-[10px] py-3 mt-6 cursor-pointer"
-    >
-      <i class="fa-solid fa-magnifying-glass mr-3"></i>Search buses
-    </button>
+<div *ngIf="currentList.length == 0" class="flex flex-col justify-center h-[300px] items-center">
+  <p>{{ LoadingStatus }}</p>
+  <p class="font-semibold text-[2rem]">Oops!!</p>
+  <p class="text-[1.5rem]">No Buses Found</p>
+  <p class="text-gray-600">Please try a different route or date</p>
+</div>
+
 <div
   *ngFor="let bus of currentList"
   class="flex w-[100%] justify-center items-center flex-col gap-[50px] py-5"

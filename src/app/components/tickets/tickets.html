@@ -8,6 +8,7 @@
           class="text-gray-400 group-focus-within:text-[#0a0157] text-[20px] mr-[10px] fa-solid fa-bus"
         ></i>
         <input
+          [(ngModel)]="current.source"
           type="text"
           placeholder="From"
           class="text-[#0a0157] text-[20px] font-semibold placeholder:text-gray-400 focus:outline-none"
@@ -18,6 +19,7 @@
           class="text-gray-400 group-focus-within:text-[#0a0157] text-[20px] mr-[10px] fa-solid fa-bus"
         ></i>
         <input
+          [(ngModel)]="current.destination"
           type="text"
           placeholder="To"
           class="text-[#0a0157] text-[20px] font-semibold placeholder:text-gray-400 focus:outline-none"
@@ -28,6 +30,7 @@
           class="text-gray-400 group-focus-within:text-[#0a0157] text-[20px] mr-[10px] fa-solid fa-calendar-days"
         ></i>
         <input
+          [(ngModel)]="current.date"
           type="text"
           placeholder="Date"
           class="text-[#0a0157] text-[20px] font-semibold placeholder:text-gray-400 focus:outline-none"
@@ -40,6 +43,12 @@
     >
       <i class="fa-solid fa-magnifying-glass mr-3"></i>Search buses
     </button>
+    <button
+      (click)="Clear()"
+      class="w-[500px] bg-[#bebebe] text-black text-[20px] rounded-[10px] py-3 mt-6 cursor-pointer"
+    >
+      Clear
+    </button>
   </div>
-  <app-diplaytickets></app-diplaytickets>
+  <app-diplaytickets *ngIf="Show" [userdata]="current"></app-diplaytickets>
 </main>

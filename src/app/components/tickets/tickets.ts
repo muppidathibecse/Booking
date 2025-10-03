@@ -1,24 +1,41 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { BUS_DETAILS, BusDetails } from '../../interfaces/busdetails';
 import { Diplaytickets } from '../diplaytickets/diplaytickets';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tickets',
-  imports: [CommonModule, Diplaytickets],
+  standalone: true,
+  imports: [CommonModule, Diplaytickets, FormsModule],
   templateUrl: './tickets.html',
   styleUrl: './tickets.css',
 })
-export class Tickets implements OnInit {
-  TotalList: BusDetails[] = [];
-  currentList: BusDetails[] = [];
-  constructor() {}
-  ngOnInit(): void {
-    this.TotalList = BUS_DETAILS;
-    console.log(this.TotalList);
+export class Tickets {
+  current: {
+    source: string;
+    destination: string;
+    date: string;
+  };
+  Show = false;
+  constructor() {
+    this.current = {
+      source: '',
+      destination: '',
+      date: '',
+    };
   }
+
   Search() {
-    this.currentList = this.TotalList;
-    console.log('currentList', this.currentList);
+    console.log(this.current);
+
+    this.Show = true;
+  }
+  Clear() {
+    this.current = {
+      source: '',
+      destination: '',
+      date: '',
+    };
+    this.Show = false;
   }
 }
